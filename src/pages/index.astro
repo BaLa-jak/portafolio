@@ -1,11 +1,11 @@
 ---
-import PageLayout from "@layouts/Layout.astro";
+import Layout from "@layouts/Layout.astro";
 import { SITE, SOCIALS } from "@consts";
 import TwinklingStars from "@components/TwinklingStars.astro";
 import MeteorShower from "@components/MeteorShower.astro";
 ---
 
-<PageLayout description={SITE.DESCRIPTION}>
+<Layout description={SITE.DESCRIPTION}>
   <div class="absolute inset-0 block dark:hidden">
     <div id="particles1" class="fixed inset-0"></div>
     <div id="particles2" class="fixed inset-0"></div>
@@ -121,4 +121,4 @@ import MeteorShower from "@components/MeteorShower.astro";
       </section>
     </div>
   </div>
-</PageLayout>
+</Layout>

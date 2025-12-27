@@ -1,10 +1,8 @@
 ---
 import { type CollectionEntry, getCollection } from "astro:content"
-import PageLayout from "@layouts/PageLayout.astro"
-import TopLayout from "@layouts/TopLayout.astro"
-import BottomLayout from "@layouts/BottomLayout.astro"
 import { formatDate } from "@lib/utils"
 import { SITE } from "@consts"
+import Layout from "@layouts/Layout.astro"
 
 // Create the static pages for legal docs
 export async function getStaticPaths() {
@@ -23,8 +21,7 @@ const { Content } = await doc.render();
 
 ---
 
-<PageLayout title={title} description={`${title} for ${SITE.TITLE}`}>
-  <TopLayout>
+<Layout title={title} description={`${title} for ${SITE.TITLE}`}>
     <div class="animate">
       <div class="page-heading">
         {title}
@@ -33,10 +30,7 @@ const { Content } = await doc.render();
         Last updated: {formatDate(date)}
       </p>
     </div>
-  </TopLayout>
-  <BottomLayout>
     <article class="animate">
       <Content/>
     </article>
-  </BottomLayout>
-</PageLayout>
+</Layout>

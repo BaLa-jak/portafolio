@@ -1,8 +1,6 @@
 ---
 import { getCollection } from "astro:content"
-import PageLayout from "@layouts/PageLayout.astro"
-import TopLayout from "@layouts/TopLayout.astro"
-import BottomLayout from "@layouts/BottomLayout.astro"
+import Layout from "@layouts/Layout.astro"
 import { WORK } from "@consts"
 
 const collection = await getCollection("work")
@@ -28,13 +26,10 @@ function formatWorkDate(input: Date | string) {
 }
 ---
 
-<PageLayout title={WORK.TITLE} description={WORK.DESCRIPTION}>
-  <TopLayout>
+<Layout title={WORK.TITLE} description={WORK.DESCRIPTION}>
     <div class="animate page-heading">
       {WORK.TITLE}
     </div>
-  </TopLayout>
-  <BottomLayout>
     <ul>
       { 
         work.map((entry) => (
@@ -55,5 +50,4 @@ function formatWorkDate(input: Date | string) {
         ))
       }
     </ul>
-  </BottomLayout>
-</PageLayout>
+</Layout>
