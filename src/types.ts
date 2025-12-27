@@ -3,10 +3,6 @@ export type Page = {
   DESCRIPTION: string
 }
 
-export interface Site extends Page {
-  AUTHOR: string
-}
-
 export type Links = {
   TEXT: string
   HREF: string
